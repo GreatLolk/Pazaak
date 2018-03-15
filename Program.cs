@@ -9,6 +9,7 @@ namespace Pazaak
     {
         static void Main()
         {
+
             int number1 = 0;
             int number2 = 0;
             int numberofhods = 0;
