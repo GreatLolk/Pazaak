@@ -51,37 +51,37 @@ for(int index = 0; index < 3; index++)
 		switch(RandomNumber)
 		{
 	case 0:
-		if (ai1.playerAI == false)//PROVERKA NA HOD
+		if (ai1.playerAI == false || ai1.AIWork == false)//PROVERKA NA HOD
 			number1 = number1 + 4;
 		else
 			number2 = number2 + 4;
 		break;
 	case 1:
-        if (ai1.playerAI == false)
+        if (ai1.playerAI == false || ai1.AIWork == false)
 			number1 = number1 + 5;
 		else
 			number2 = number2 + 5;
 		break;
-	case 2: 
-		if (ai1.playerAI == false)
+	case 2:
+        if (ai1.playerAI == false || ai1.AIWork == false)
 			number1 = number1 + 6;
 		else
 			number2 = number2 + 6;
 		break;
             case 3:
-		if (ai1.playerAI == false)
+        if (ai1.playerAI == false || ai1.AIWork == false)
 			number1 = number1 - 4;
 		else
 			number2 = number2 - 4;
 		break;
 	case 4:
-		if (ai1.playerAI == false)
+        if (ai1.playerAI == false || ai1.AIWork == false)
 			number1 = number1 - 5;
 		else
 			number2 = number2 - 5;
 		break;
 	case 5:
-		if (ai1.playerAI == false)
+        if (ai1.playerAI == false || ai1.AIWork == false)
 			number1 = number1 - 6;
 		else
 			number2 = number2 - 6;

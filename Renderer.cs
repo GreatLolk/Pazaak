@@ -35,18 +35,7 @@ namespace Pazaak
         Console.WriteLine("*                      Your hand:                                                                               Enemy hand:                                *");
         Console.WriteLine("*           ---------     ----------      ---------                                                        -----------    -------------  -------------    *");
         Console.WriteLine("*           *         *    *          *    *           *                                                     *             *  *              *  *               *  *");
-        switch (numberofhods)
-        {
-            case 0:
-                Console.WriteLine("*           *   {0}   *    *          *    *          *                                                     *            *  *             *  *              *  *", cards1.Dcard1);
-                break;
-            case 1:
-                Console.WriteLine("*           *   {0}   *    *    {1}    *    *          *                                                     *            *  *             *  *              *  *", cards1.Dcard1, cards1.Dcard2);
-                break;
-            case 2:
-                Console.WriteLine("*           *   {0}   *    *    {1}    *    *    {2}    *                                                     *            *  *             *  *              *  *", cards1.Dcard1, cards1.Dcard2, cards1.Dcard3);
-                break;
-        }
+        Console.WriteLine("*           *   {0}   *    *    {1}    *    *    {2}    *                                                     *            *  *             *  *              *  *", cards1.Dcard1, cards1.Dcard2, cards1.Dcard3);
         Console.WriteLine("*           *         *    *          *    *           *                                                     *             *  *              *  *               *  *");
         Console.WriteLine("*           ---------     ----------      ---------                                                        -----------    -------------  -------------    *");
         Console.WriteLine("*                                                                                                                                                                                *");
