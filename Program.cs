@@ -50,7 +50,7 @@ namespace Pazaak
                 renderer1.RenderTable(number1, number2, numberofhods, cards1); 
 
                 if (ai1.playerAI == false) // CHECK STEP
-                    playerinput1.GetPlayerInput(cards1, DopColoda, ai1, winchecker1, number1, number2);
+                    playerinput1.GetPlayerInput(cards1, DopColoda, ai1, winchecker1, number1, number2); // NOT WORK?
                 else
                     do
                     {
