@@ -53,7 +53,7 @@ namespace Pazaak
                 {
                     while (ai1.playerAI == false)
                     {
-                        playerinput1.GetPlayerInput(cards1, DopColoda, ai1, winchecker1, number1, number2);
+                        playerinput1.GetPlayerInput(cards1, DopColoda, ai1, winchecker1, number1, number2); // Numbers dont't work.
                         Console.Clear();
                         renderer1.RenderTable(number1, number2, numberofhods, cards1);
                     }
