@@ -45,6 +45,7 @@ namespace Pazaak
 			    case 2:
 			    Console.WriteLine("2 player wins!!!");
           break;
+
 		    }
 	    }
     }
