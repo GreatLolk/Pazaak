@@ -70,7 +70,7 @@ namespace Pazaak
                         if (winchecker1.IsWin == 2)
                             break;
                     } while (ai1.AIWork == true); // FORFEIT OF FIRST PLAYER
-                }
+                } 
 
                 numberofhods++;
                 winchecker1.CheckWin(winchecker1.IsWin, number1, number2);
