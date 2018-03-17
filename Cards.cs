@@ -38,77 +38,66 @@ for(int index = 0; index < 3; index++)
 }
 
 	public void CreateDopColoda(int[] DopColoda) //BOKOVAYA
-{
-for(int index = 0; index < 3; index++)
-{
-			DopColoda[index] = rnd.Next(0,5);
-			SetStringsForDopCards(DopColoda[index], index);//DLYA OTRISOVKI V Renderer
-}
-}
+    {
+            for(int index = 0; index < 3; index++)
+            {
+			            DopColoda[index] = rnd.Next(0,5);
+			            SetStringsForDopCards(DopColoda[index], index);//DLYA OTRISOVKI V Renderer
+            }
+    }
 
-	public void ActionOfCard(int RandomNumber, int number1, int number2, AI ai1)
+	public int ActionOfCard(int RandomNumber, int number, AI ai1)
 	{
 		switch(RandomNumber)
 		{
-	case 0:
-		if (ai1.playerAI == false)//PROVERKA NA HOD
-			number1 = number1 + 4;
-		else
-			number2 = number2 + 4;
-		break;
-	case 1:
-        if (ai1.playerAI == false)
-			number1 = number1 + 5;
-		else
-			number2 = number2 + 5;
-		break;
-	case 2: 
-		if (ai1.playerAI == false)
-			number1 = number1 + 6;
-		else
-			number2 = number2 + 6;
-		break;
+	        case 0:
+                number += 4;
+                break;
+            case 1:
+                number += 5;
+                break;
+            case 2:
+                number += 6;
+                break;
             case 3:
-		if (ai1.playerAI == false)
-			number1 = number1 - 4;
-		else
-			number2 = number2 - 4;
-		break;
-	case 4:
-		if (ai1.playerAI == false)
-			number1 = number1 - 5;
-		else
-			number2 = number2 - 5;
-		break;
-	case 5:
-		if (ai1.playerAI == false)
-			number1 = number1 - 6;
-		else
-			number2 = number2 - 6;
-		break;
+                number -= 4;
+                break;
+            case 4:
+                number -= 5;
+                break;
+            case 5:
+                number -= 6;
+                break;
 		}
+        return number;
 	}
 
-	public void FirstCard(int[] DopColoda, int number1, int number2, AI ai1)
+	public void FirstCard(ref int number1, int[] DopColoda, AI ai1)
 	{
-		if ( WasUsed1 == false)//BILA ISPOLSOVANA ILI NET
-		ActionOfCard(DopColoda[0], number1, number2, ai1);
-		WasUsed1 = true;
+        if (WasUsed1 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number1 = ActionOfCard(DopColoda[0], number1, ai1);
+            WasUsed1 = true;
+        };
 	}
 
-    public void SecondCard(int[] DopColoda, int number1, int number2, AI ai1)
-	{
-		if ( WasUsed2 == false)
-        ActionOfCard(DopColoda[1], number1, number2, ai1);
-		WasUsed2 = true;
-	}
+    public void SecondCard(ref int number1, int[] DopColoda, AI ai1)
+    {
+        if (WasUsed2 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number1 = ActionOfCard(DopColoda[1], number1, ai1);
+            WasUsed2 = true;
+        }
+    }
 
-    public void ThirdCard(int[] DopColoda, int number1, int number2, AI ai1)
-	{
-		if ( WasUsed3 == false)
-        ActionOfCard(DopColoda[2], number1, number2, ai1);
-		WasUsed3 = true;
-	}
+    public void ThirdCard(ref int number1, int[] DopColoda, AI ai1)
+    {
+        if (WasUsed3 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number1 = ActionOfCard(DopColoda[2], number1, ai1);
+            WasUsed3 = true;
+        }
+    }
 	
 	public void SetStringsForDopCards(int RandomNumber, int index)
 	{
@@ -265,26 +254,32 @@ for(int index = 0; index < 3; index++)
 }
 		}
 
-	public void AIFirstCard(int[] AIDopColoda, int number1, int number2, AI ai1)
-	{
-		if ( AIWasUsed1 == false)//BILA ISPOLSOVANA ILI NET
-		ActionOfCard(AIDopColoda[0], number1, number2, ai1);
-		AIWasUsed1 = true;
-	}
+    public void AIFirstCard(ref int number2, int[] AIDopColoda, AI ai1)
+    {
+        if (AIWasUsed1 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number2 = ActionOfCard(AIDopColoda[0], number2, ai1);
+            AIWasUsed1 = true;
+        }
+    }
 
-    public void AISecondCard(int[] AIDopColoda, int number1, int number2, AI ai1)
-	{
-		if ( AIWasUsed2 == false)
-        ActionOfCard(AIDopColoda[1], number1, number2, ai1);
-		AIWasUsed2 = true;
-	}
+    public void AISecondCard(ref int number2, int[] AIDopColoda, AI ai1)
+    {
+        if (AIWasUsed2 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number2 = ActionOfCard(AIDopColoda[1], number2, ai1);
+            AIWasUsed2 = true;
+        }
+    }
 
-    public void AIThirdCard(int[] AIDopColoda, int number1, int number2, AI ai1)
-	{
-		if ( AIWasUsed3 == false)
-        ActionOfCard(AIDopColoda[2], number1, number2, ai1);
-		AIWasUsed3 = true;
-	}
+    public void AIThirdCard(ref int number2, int[] AIDopColoda, AI ai1)
+    {
+        if (AIWasUsed3 == false)//BILA ISPOLSOVANA ILI NET
+        {
+            number2 = ActionOfCard(AIDopColoda[2], number2, ai1);
+            AIWasUsed3 = true;
+        }
+    }
 	public void SetStringsForAIMainCards(int RandomNumber, int index)
 	{
 		switch(index)
