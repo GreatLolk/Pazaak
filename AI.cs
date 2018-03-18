@@ -22,7 +22,7 @@ namespace Pazaak
                     cards1.AIThirdCard(ref number2, AIDopColoda, ai1);
 			}
 
-			if(number2 == 20)
+			else if(number2 == 20)
 			{
                 if (AIDopColoda[0] == 0 && cards1.AIWasUsed1 == false || AIDopColoda[1] == 1 && cards1.AIWasUsed2 == false || AIDopColoda[2] == 2 && cards1.AIWasUsed1 == false)
                     cards1.AIFirstCard(ref number2, AIDopColoda, ai1);
@@ -32,7 +32,7 @@ namespace Pazaak
                     cards1.AIThirdCard(ref number2, AIDopColoda, ai1);
 			}
 
-			if(number2 > 20)
+			else if(number2 > 20)
 			{
                 if (AIDopColoda[0] == 0 && cards1.AIWasUsed1 == false || AIDopColoda[1] == 1 && cards1.AIWasUsed2 == false || AIDopColoda[2] == 2 && cards1.AIWasUsed1 == false)
                     cards1.AIFirstCard(ref number2, AIDopColoda, ai1);

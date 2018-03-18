@@ -11,12 +11,12 @@ namespace Pazaak
 
 	    public void CheckWin(int IsWin, int number1, int number2)
 	    {
-		    if(number1 > number2 && number1 != 20 && number1 < 20 && number1 > 15)
+		    if(number1 > number2 && number1 != 20 && number1 < 20)
 		    {
 		    IsWin = 1;
 		    }
 
-            else if (number2 > number1 && number2 != 20 && number2 < 20 && number2 > 15) 
+            else if (number2 > number1 && number2 != 20 && number2 < 20) 
 		    {
 		    IsWin = 2;
 		    }

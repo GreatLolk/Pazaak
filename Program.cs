@@ -61,15 +61,12 @@ namespace Pazaak
                 
                 if (ai1.playerAI == true)
                 {
-                    do
-                    {
-                        ai1.AIHod(ref number2, AIDopColoda, cards1, ai1);
-                        winchecker1.CheckWin(winchecker1.IsWin, number1, number2);
-                        Console.Clear();
-                        renderer1.RenderTable(number1, number2, numberofhods, cards1);
-                        if (winchecker1.IsWin == 2)
-                            break;
-                    } while (ai1.AIWork == true); // FORFEIT OF FIRST PLAYER
+                    ai1.AIHod(ref number2, AIDopColoda, cards1, ai1);
+                    Console.Clear();
+                    renderer1.RenderTable(number1, number2, numberofhods, cards1);
+                    if (ai1.AIWork == true)
+                        winchecker1.IsWin = 2;
+                    ai1.playerAI = false;
                 }
 
                 numberofhods++;
