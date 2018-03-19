@@ -38,7 +38,31 @@ namespace Pazaak
         Console.WriteLine("*                      Your hand:                                                                               Enemy hand:                                  *"); // 10
         Console.WriteLine("*           ---------     ---------     ---------                                                        ---------     ---------     ---------               *"); // 11
         Console.WriteLine("*           *       *     *       *     *       *                                                        *       *     *       *     *       *               *"); // 12
-        Console.WriteLine("*           *   {0}  *     *   {1}  *     *   {2}  *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard2, cards1.Dcard3); // 13
+
+        if(cards1.WasUsed1 == false && cards1.WasUsed2 == false && cards1.WasUsed3 == false)
+            Console.WriteLine("*           *   {0}  *     *   {1}  *     *   {2}  *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard2, cards1.Dcard3); // 13
+
+        else if(cards1.WasUsed1 == true && cards1.WasUsed2 == false && cards1.WasUsed3 == false)
+            Console.WriteLine("*           *       *     *   {0}  *     *   {1}  *                                                        *       *     *       *     *       *               *", cards1.Dcard2, cards1.Dcard3); // 13
+
+        else if(cards1.WasUsed1 == false && cards1.WasUsed2 == true && cards1.WasUsed3 == false)
+            Console.WriteLine("*           *   {0}  *     *       *     *   {1}  *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard3); // 13
+
+        else if (cards1.WasUsed1 == false && cards1.WasUsed2 == false && cards1.WasUsed3 == true)
+            Console.WriteLine("*           *   {0}  *     *   {1}  *     *       *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard2); // 13
+
+        else if (cards1.WasUsed1 == true && cards1.WasUsed2 == true && cards1.WasUsed3 == false)
+            Console.WriteLine("*           *       *     *       *     *   {0}  *                                                        *       *     *       *     *       *               *", cards1.Dcard3); // 13
+
+        else if (cards1.WasUsed1 == false && cards1.WasUsed2 == true && cards1.WasUsed3 == true)
+            Console.WriteLine("*           *   {0}  *     *       *     *       *                                                        *       *     *       *     *       *               *", cards1.Dcard1); // 13
+
+        else if (cards1.WasUsed1 == true && cards1.WasUsed2 == false && cards1.WasUsed3 == true)
+            Console.WriteLine("*           *   {0}  *     *       *     *   {1}  *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard3); // 13
+
+        else if (cards1.WasUsed1 == true && cards1.WasUsed2 == true && cards1.WasUsed3 == true)
+            Console.WriteLine("*           *       *     *       *     *       *                                                        *       *     *       *     *       *               *"); // 13
+
         Console.WriteLine("*           *       *     *       *     *       *                                                        *       *     *       *     *       *               *"); // 14
         Console.WriteLine("*           ---------     ---------     ---------                                                        ---------     ---------     ---------               *"); // 15
         Console.WriteLine("*                                                                                                                                                            *"); // 16

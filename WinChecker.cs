@@ -9,7 +9,7 @@ namespace Pazaak
     {
         public int IsWin = 0;
 
-	    public void CheckWin(int IsWin, int number1, int number2)
+	    public void CheckWin(ref int IsWin, int number1, int number2)
 	    {
 		    if(number1 > number2 && number1 != 20 && number1 < 20)
 		    {
