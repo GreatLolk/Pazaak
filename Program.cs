@@ -29,6 +29,15 @@ namespace Pazaak
 
             while (winchecker1.IsWin == 0)
             {
+                if (numberofhods == 3)
+                {
+                    numberofhods = 0;
+                    cards1.CreateMainColoda(MainColoda);
+                    cards1.CreateDopColoda(DopColoda);
+                    cards1.CreateAIMainColoda(AIMainColoda);
+                    cards1.CreateAIDopColoda(AIDopColoda);
+                }
+
                 switch (numberofhods) // SCORE FOR 2 PLAYERS
                 {
                     case 0:
@@ -42,8 +51,6 @@ namespace Pazaak
                     case 2:
                         number1 = number1 + cards1.MintCard3;
                         number2 = number2 + cards1.AIMintCard3;
-                            break;
-                    default:
                             break;
                 }
 
@@ -70,7 +77,7 @@ namespace Pazaak
                 }
 
                 numberofhods++;
-                winchecker1.CheckWin(winchecker1.IsWin, number1, number2);
+                winchecker1.CheckWin(ref winchecker1.IsWin, number1, number2);
                 Console.Clear();
             }
 
