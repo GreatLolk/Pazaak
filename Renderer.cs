@@ -7,7 +7,7 @@ namespace Pazaak
 {
     class Renderer
     {
-    public void RenderTable(int number1, int number2, int numberofhods, Cards cards1)
+    public void RenderTable(int number1, int number2, int numberofhods, Cards cards1, AI ai1)
     {
         Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------"); // 1
 	    Console.WriteLine("*                                                           Your score:               Enemy score:                                                           *");
@@ -58,7 +58,7 @@ namespace Pazaak
             Console.WriteLine("*           *   {0}  *     *       *     *       *                                                        *       *     *       *     *       *               *", cards1.Dcard1); // 13
 
         else if (cards1.WasUsed1 == true && cards1.WasUsed2 == false && cards1.WasUsed3 == true)
-            Console.WriteLine("*           *   {0}  *     *       *     *   {1}  *                                                        *       *     *       *     *       *               *", cards1.Dcard1, cards1.Dcard3); // 13
+            Console.WriteLine("*           *       *     *   {0}  *     *       *                                                        *       *     *       *     *       *               *", cards1.Dcard2); // 13
 
         else if (cards1.WasUsed1 == true && cards1.WasUsed2 == true && cards1.WasUsed3 == true)
             Console.WriteLine("*           *       *     *       *     *       *                                                        *       *     *       *     *       *               *"); // 13
@@ -70,7 +70,16 @@ namespace Pazaak
         Console.WriteLine("*                                                                             Forfeit                                                                        *"); // 18
         Console.WriteLine("*                                                                                                                                                            *"); // 19
         Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------------------------------------------"); // 20
-        // 0.3 – NUZNA PODGONKA
+        if (ai1.playerAI == false)
+        {
+            Console.WriteLine("Your turn:");
+        }
+
+        else if (ai1.playerAI == true)
+        {
+            Console.WriteLine("Enemy turn.");
+        }
+
         }
     }
 }
