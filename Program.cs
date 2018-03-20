@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Pazaak
 {
@@ -54,7 +55,7 @@ namespace Pazaak
                             break;
                 }
 
-                renderer1.RenderTable(number1, number2, numberofhods, cards1);
+                renderer1.RenderTable(number1, number2, numberofhods, cards1, ai1);
 
                 if (ai1.playerAI == false) // CHECK STEP
                 {
@@ -62,22 +63,32 @@ namespace Pazaak
                     {
                         playerinput1.GetPlayerInput(ref number1, cards1, DopColoda, ai1, winchecker1);
                         Console.Clear();
-                        renderer1.RenderTable(number1, number2, numberofhods, cards1);
+                        renderer1.RenderTable(number1, number2, numberofhods, cards1, ai1);
                     }
                 }
                 
                 if (ai1.playerAI == true)
                 {
-                    ai1.AIHod(ref number2, AIDopColoda, cards1, ai1);
-                    Console.Clear();
-                    renderer1.RenderTable(number1, number2, numberofhods, cards1);
+                    if (winchecker1.IsWin != 2)
+                    {
+                        for (int index = 0; index < 3; index++)
+                        {
+                            ai1.AIHod(ref number2, AIDopColoda, cards1, ai1);
+                            Console.Clear();
+                            renderer1.RenderTable(number1, number2, numberofhods, cards1, ai1);
+                            Thread.Sleep(1000);
+                        }
+                    }
                     if (ai1.AIWork == true)
                         winchecker1.IsWin = 2;
                     ai1.playerAI = false;
                 }
 
                 numberofhods++;
-                winchecker1.CheckWin(ref winchecker1.IsWin, number1, number2);
+                if (numberofhods == 3)
+                {
+                    winchecker1.CheckWin(ref winchecker1.IsWin, number1, number2);
+                }
                 Console.Clear();
             }
 

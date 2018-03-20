@@ -30,7 +30,7 @@ namespace Pazaak
 			        Stand(ai1);
 		        break;
 		        case "forfeit":
-			        Forfeit(winchecker1);
+			        Forfeit(winchecker1, ai1);
 		        break;
 		        }
         }
@@ -46,10 +46,10 @@ namespace Pazaak
 		        ai1.AIWork = true; //DO KONZA IGRAET TOLKO AI
         }
 
-        public void Forfeit(WinChecker winchecker1)
+        public void Forfeit(WinChecker winchecker1, AI ai1)
         {
 		        winchecker1.IsWin = 2; //2 IGROK WIN
-		        winchecker1.Win(winchecker1.IsWin);
+                ai1.playerAI = true;
         }
     }
 }

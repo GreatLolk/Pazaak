@@ -60,13 +60,13 @@ for(int index = 0; index < 3; index++)
                 number += 6;
                 break;
             case 3:
-                number -= 4;
+                number -= 1;
                 break;
             case 4:
-                number -= 5;
+                number -= 2;
                 break;
             case 5:
-                number -= 6;
+                number -= 3;
                 break;
 		}
         return number;
@@ -116,13 +116,13 @@ for(int index = 0; index < 3; index++)
 				Dcard1 = "+6";
 				break;
 			case 3:
-				Dcard1 = "-4";
+				Dcard1 = "-1";
 				break;
 			case 4:
-				Dcard1 = "-5";
+				Dcard1 = "-2";
 				break;
 			case 5:
-				Dcard1 = "-6";
+				Dcard1 = "-3";
 				break;
 		}
 		break;
@@ -139,13 +139,13 @@ for(int index = 0; index < 3; index++)
 				Dcard2 = "+6";
 				break;
 			case 3:
-				Dcard2 = "-4";
+				Dcard2 = "-1";
 				break;
 			case 4:
-				Dcard2 = "-5";
+				Dcard2 = "-2";
 				break;
 			case 5:
-				Dcard2 = "-6";
+				Dcard2 = "-3";
 				break;
 		}
 
@@ -163,13 +163,13 @@ for(int index = 0; index < 3; index++)
 				Dcard3 = "+6";
 				break;
 			case 3:
-				Dcard3 = "-4";
+				Dcard3 = "-1";
 				break;
 			case 4:
-				Dcard3 = "-5";
+				Dcard3 = "-2";
 				break;
 			case 5:
-				Dcard3 = "-6";
+				Dcard3 = "-3";
 				break;
 		}
 
@@ -280,56 +280,56 @@ for(int index = 0; index < 3; index++)
             AIWasUsed3 = true;
         }
     }
-	public void SetStringsForAIMainCards(int RandomNumber, int index)
-	{
-		switch(index)
-        {
-	case 0:
-		switch(RandomNumber)
-		{
-			case 0:
-				AIMintCard1 = 4;
-				break;
-			case 1:
-				AIMintCard1 = 5;
-				break;
-			case 2:
-				AIMintCard1 = 6;
-				break;
-		}
-		break;
-	case 1:
-		switch(RandomNumber)
-		{
-			case 0:
-				AIMintCard2 = 4;
-				break;
-			case 1:
-				AIMintCard2 = 5;
-				break;
-			case 2:
-				AIMintCard2 = 6;
-				break;
-		}
+	    public void SetStringsForAIMainCards(int RandomNumber, int index)
+	    {
+		    switch(index)
+            {
+	    case 0:
+		    switch(RandomNumber)
+		    {
+			    case 0:
+				    AIMintCard1 = 4;
+				    break;
+			    case 1:
+				    AIMintCard1 = 5;
+				    break;
+			    case 2:
+				    AIMintCard1 = 6;
+				    break;
+		    }
+		    break;
+	    case 1:
+		    switch(RandomNumber)
+		    {
+			    case 0:
+				    AIMintCard2 = 4;
+				    break;
+			    case 1:
+				    AIMintCard2 = 5;
+				    break;
+			    case 2:
+				    AIMintCard2 = 6;
+				    break;
+		    }
 
-		break;
-	case 2:
-		switch(RandomNumber)
-		{
-			case 0:
-				AIMintCard3 = 4;
-				break;
-			case 1:
-				AIMintCard3 = 5;
-				break;
-			case 2:
-				AIMintCard3 = 6;
-				break;
-		}
+		    break;
+	    case 2:
+		    switch(RandomNumber)
+		    {
+			    case 0:
+				    AIMintCard3 = 4;
+				    break;
+			    case 1:
+				    AIMintCard3 = 5;
+				    break;
+			    case 2:
+				    AIMintCard3 = 6;
+				    break;
+		    }
 
-		break;
+		    break;
 
-        }
+            }
     }
     }
     }
